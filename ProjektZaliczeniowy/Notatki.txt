@@ -1,0 +1,20 @@
+I. Category
+	1. Id
+	2. Name
+
+II. Product
+	1. Id
+	2. Name
+	3. CategoryId
+
+III. Seller
+	1. Id
+	2. Name
+
+IV. ProductPrice
+	1. Id
+	2. Date	
+	3. Price
+	4. ProductId
+	5. SellerId
+	

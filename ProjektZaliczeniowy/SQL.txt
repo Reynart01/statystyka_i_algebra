@@ -1,0 +1,26 @@
+CREATE table CATEGORIES(
+    category_id int PRIMARY KEY, 
+    name varchar(50)
+);
+
+CREATE table PRODUCTS(
+    product_id int PRIMARY KEY, 
+    name varchar(255),    
+    category_id int,    
+    CONSTRAINT FK_PRODUCTS_CATEGORIES FOREIGN KEY (category_id) REFERENCES CATEGORIES(category_id)
+);
+
+CREATE table SELLERS(
+    seller_id int PRIMARY KEY, 
+    name varchar(50)
+);
+
+CREATE table PRODUCTS_PRICES(
+    product_price_id int PRIMARY KEY, 
+    price_date date,
+	price number(8,2),
+    product_id int,
+    seller_id int,
+    CONSTRAINT FK_PRODUCTS_PRICES_PRODUCTS FOREIGN KEY (product_id) REFERENCES PRODUCTS(product_id),
+    CONSTRAINT FK_PRODUCTS_PRICES_SELLERS FOREIGN KEY (seller_id) REFERENCES SELLERS(seller_id)
+);
